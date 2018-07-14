@@ -16,7 +16,16 @@ http://www.springframework.org/schema/context/spring-context.xsd http://www.spri
         <property name="osName" value="#{systemProperties['os.name']}" />
     </bean>
 
-
+    <!--操作资源文件方法1-->
     <util:properties id="properties"  location="database.properties" />
+
+    <!--操作资源文件方法2-->
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >-->
+        <!--<property name="fileEncoding" value="UTF-8" />-->
+        <!--<property name="location" value="db.properties" />-->
+    <!--</bean>-->
+
+    <!--操作资源文件方法3-->
+    <contex:property-placeholder file-encoding="UTF-8" location="db.properties" />
 
 </beans>

@@ -112,5 +112,6 @@ public class SpELApplication {
         DatabaseConfig databaseConfig = context.getBean(DatabaseConfig.class);
         System.out.println(databaseConfig);
     }
+
 }
 
