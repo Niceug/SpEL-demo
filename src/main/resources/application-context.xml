@@ -16,7 +16,6 @@ http://www.springframework.org/schema/context/spring-context.xsd http://www.spri
         <property name="osName" value="#{systemProperties['os.name']}" />
     </bean>
 
-
     <util:properties id="properties"  location="database.properties" />
 
 </beans>
