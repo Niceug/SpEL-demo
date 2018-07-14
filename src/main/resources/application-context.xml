@@ -2,9 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:contex="http://www.springframework.org/schema/context"
+       xmlns:bean="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
-http://www.springframework.org/schema/context/spring-context.xsd">
+http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean:component-scan base-package="com.ltp.spel" />
+
+    <bean id="systemPropertiesBean" class="com.ltp.spel.entity.SystemPropertiesBean" >
+        <property name="fileEncoding" value="#{systemProperties['file.encoding']}" />
+        <property name="osName" value="#{systemProperties['os.name']}" />
+    </bean>
+
+
+    <util:properties id="properties"  location="database.properties" />
 
 </beans>
